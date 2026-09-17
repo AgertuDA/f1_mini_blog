@@ -1,5 +1,6 @@
 import Header from "./components/Header";
 import PostList from "./components/PostList";
+import "./styles/main.css";
 
 function App() {
   return (

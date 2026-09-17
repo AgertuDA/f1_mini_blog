@@ -5,12 +5,24 @@ interface PostProps {
 }
 
 function Post({ post }: PostProps) {
+  const isRecent = post.id === 3;
+
   return (
     <article>
       <h2>{post.title}</h2>
+
       <p>By {post.author}</p>
+
       <p>{post.content}</p>
-      <p>{post.date}</p>
+
+      <p
+        style={{
+          fontWeight: isRecent ? "bold" : "normal",
+          textDecoration: isRecent ? "underline" : "none",
+        }}
+      >
+        {post.date}
+      </p>
     </article>
   );
 }
