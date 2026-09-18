@@ -205,5 +205,5 @@ The project uses the following main packages:
 - TypeScript — for static type checking
 - Vite — for development and production build tooling
 
-## Authour
+## Author
 Agertu Diriba
