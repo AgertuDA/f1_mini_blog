@@ -1,5 +1,6 @@
 import Post from "./Post";
 import type { Post as PostType } from "../types/post";
+import withLogger from "../hoc/withLogger";
 
 const posts: PostType[] = [
   {
@@ -40,4 +41,4 @@ function PostList() {
   );
 }
 
-export default PostList;
+export default withLogger(PostList, "PostList");
