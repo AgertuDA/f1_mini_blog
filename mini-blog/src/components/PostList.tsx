@@ -9,7 +9,7 @@ const posts: PostType[] = [
     author: "Joe",
     content:
       "React makes it easier to build interactive user interfaces using reusable components.",
-    date: "September 10, 2026",
+    date: "September 15, 2026",
   },
   {
     id: 2,
@@ -17,15 +17,15 @@ const posts: PostType[] = [
     author: "Abraham",
     content:
       "TypeScript adds type safety to JavaScript and can help developers catch errors earlier.",
-    date: "September 12, 2026",
+    date: "September 16, 2026",
   },
   {
     id: 3,
     title: "Understanding React Components",
     author: "Sarah",
     content:
-      "Components are reusable building blocks that help organize a React application.",
-    date: "September 15, 2026",
+      "Components are reusable building blocks that help organize a React application. Each component can have its own responsibilities, making the application easier to understand, maintain, and update as new features are added.",
+    date: "September 18, 2026",
   },
 ];
 
