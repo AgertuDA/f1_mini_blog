@@ -1,106 +1,205 @@
-# react-dev-formative-1
+# Dev Insights Mini Blog
 
-## Formative Assessment: React "Mini Blog" Project
+A simple Mini Blog built with React, TypeScript, and Vite for the Dev Insights startup.
 
-**Submission:** Canvas Submission (link to your GitHub repository)
+## Project Overview
 
-**Grading:** This project will contribute to your overall participation and formative assessment grade. Feedback will be provided to guide your learning.
+The Dev Insights Mini Blog is a small React application that displays a list of blog posts. Each post contains a title, author, content preview, and publication date.
 
-### Scenario:
+The application demonstrates reusable React components, TypeScript interfaces, multiple CSS styling approaches, conditional styling, React performance optimization, and a Higher-Order Component (HOC).
 
-You are a junior developer at a startup called "Dev Insights." They want to create an internal "Mini Blog" platform where employees can share quick tips, insights, and updates related to web development. Your task is to build the foundation of this platform using React, demonstrating your understanding of TypeScript, Vite, components, styling, and optimization learned in the first three weeks. Please do not use any templates for this assesment.
+## Technologies Used
 
-### Project Requirements:
-
-**1. Project Setup (Vite & TypeScript):**
-
-*   Initialize a new React project using **Vite** with TypeScript support. Use the following command in your terminal:
-    ```bash
-    npm create vite@latest mini-blog -- --template react-ts
-    cd mini-blog
-    npm install
-    ```
-*   Ensure your project has a proper directory structure for components, styles, and potentially utility functions.
-
-**2. Core Components (React Basics & Component Types):**
-
-*   **Header Component:**
-    *   A functional component displaying the "Dev Insights" logo (you can use a text-based logo for simplicity) and a navigation link to "New Post" (this link doesn't need to be functional for now).
-*   **PostList Component:**
-    *   A component that displays a list of blog posts. Initially, you can hardcode an array of 2-3 sample posts within this component.
-    *   Each post in the list should display:
-        *   Title
-        *   Author (Name)
-        *   A short preview (first few words of the content)
-        *   Date posted (you can hardcode a date for now)
-    *   Make sure to use propper types in typescript for the post object. (Week 1)
-*   **Post Component:**
-    *   A reusable component that renders a single blog post's details (title, author, content preview, date).
-    *   Decide whether to use a functional or a class component for this, and justify your choice in the README file based on what you learned in Week 3.
-*   **App Component:**
-    *   The root component that renders the `Header` and `PostList` components.
-
-**3. Styling (CSS & Styling Techniques):**
-
-*   Apply styling to your components using at least **two** of the following methods: (Week 3)
-    *   External CSS files
-    *   Inline styles
-    *   Styled Components (or any other CSS-in-JS library)
-*   Implement conditional styling for at least one element. For instance:
-    *   Highlight posts by a specific author with a different background color.
-    *   Show a "New!" badge next to posts published within the last 24 hours.
-
-**4. Component Optimization & Higher-Order Components (HOCs):**
-
-*   Implement at least one example of component optimization to improve rendering performance. Consider: (Week 3)
-    *   Using `React.memo` or `PureComponent` to prevent unnecessary re-renders.
-    *   Using a unique `key` prop for each item when rendering lists.
-*   Create a simple HOC (e.g., `withLogger`) that logs a message to the console when a component is mounted and unmounted. Apply this HOC to at least one of your components.
-
-**5. Documentation (README):**
-
-*   In your GitHub repository's README file:
-    *   Provide clear instructions on how to install, run, and test the application. Remember to mention that this project uses Vite.
-    *   Explain your choices regarding component types (functional vs. class), styling methods, and optimization strategies.
-    *   Briefly reflect on any challenges you faced and how you overcame them.
-    *   Include a list of any external libraries/packages used.
-
-### GitHub Setup & Requirements:
+- React
+- TypeScript
+- Vite
+- CSS
 
 
-1. Create a new public GitHub repository for this assessment.
-2. Clone the repository to your local machine.
-3. Create your React project and complete the assessment inside this repository.
-4. Commit and push your work incrementally throughout development.
-5. Use clear and meaningful commit messages describing the changes made.
-6. Do not upload the entire completed application in one final commit.
-7. Do not commit node_modules.
-8. Ensure all files required to install and run the application are included.
-9. Ensure your latest work is pushed to GitHub before submitting.
+## Project Structure
 
-Your GitHub development history forms part of the evidence used when reviewing your work.
+```text
+mini-blog/
+├── src/
+│   ├── components/
+│   │   ├── Header.tsx
+│   │   ├── Post.tsx
+│   │   └── PostList.tsx
+│   │
+│   ├── hoc/
+│   │   └── withLogger.tsx
+│   │
+│   ├── styles/
+│   │   └── main.css
+│   │
+│   ├── types/
+│   │   └── post.ts
+│   │
+│   ├── App.tsx
+│   └── main.tsx
+│
+└── package.json
+```
 
-### Deliverables on Canvas:
+## Components
 
-1.  A link to your completed GitHub repository.
-2.  A short reflection (1-2 paragraphs) on your learning experience during the project. What did you find most valuable? What areas would you like to explore further?
+### App
 
-### Assessment Criteria:
+`App` is the root component of the application. It renders the `Header` and `PostList` components.
 
-*   **Functionality:** Does the application work as intended, fulfilling the core requirements?
-*   **Code Quality:** Is the code well-structured, readable, and maintainable? Does it adhere to React and TypeScript best practices?
-*   **Component Design:** Are components well-organized, reusable, and appropriately designed (functional vs. class)?
-*   **Styling:** Is styling implemented effectively using the chosen methods, and does it enhance the user interface?
-*   **Optimization & HOCs:** Are optimization techniques and HOCs implemented correctly to improve performance and code organization?
-*   **Documentation:** Is the README file clear, informative, and well-written?
-*   **Reflection:** Does the reflection demonstrate thoughtful engagement with the project and the learning materials?
+### Header
 
-### Tips for Success:
+`Header` displays the Dev Insights name and the New Post link.
 
-*   Start early and break down the project into smaller, manageable tasks.
-*   Refer back to the module materials and examples from the first three weeks.
-*   Use the React Developer Tools to debug and inspect your components.
-*   Don't hesitate to ask questions in class or on the discussion forums if you get stuck.
-*   Focus on understanding the concepts and applying them to the project rather than getting lost in complex features.
+### PostList
 
-This project is designed to be a stepping stone in your React journey. Embrace the challenges, learn from your mistakes, and have fun building your "Mini Blog" application! Good luck!
+`PostList` contains the hardcoded blog post data and uses the `map()` method to render each post using the reusable `Post` component.
+
+### Post
+
+`Post` is a reusable functional component that receives a typed post object through props and displays the post title, author, content, and date.
+
+### withLogger
+
+`withLogger` is a Higher-Order Component that adds logging behavior to a component. It logs when the wrapped component mounts and unmounts.
+
+## Component Type
+
+Functional components were used throughout the project.
+
+Functional components were chosen because they provide a simple and readable way to build the application's UI. They also work naturally with React Hooks such as `useEffect`, which is used by the `withLogger` HOC.
+
+## TypeScript
+
+A TypeScript interface is used to define the structure of each blog post.
+
+The `Post` interface contains:
+
+- `id`
+- `title`
+- `author`
+- `content`
+- `date`
+
+This provides type safety and helps ensure that each post contains the expected properties and data types.
+
+## Styling
+
+Two styling approaches were used in the project.
+
+### External CSS
+
+The main layout and visual appearance are defined in:
+
+`src/styles/main.css`
+
+This includes styling for the header, main content area, blog cards, typography, spacing, and background.
+
+### Inline Styling
+
+Inline styles are used in the `Post` component for the post date.
+
+Conditional styling is applied so that the most recent post has a bold and underlined date.
+
+## Optimization
+
+`React.memo` is used with the `Post` component:
+
+```tsx
+export default memo(Post)
+```
+
+This helps avoid unnecessary re-renders when the component receives the same props.
+
+Unique `key` values are also provided when rendering the posts:
+
+```tsx
+<Post key={post.id} post={post} />
+```
+
+The post ID is used as the unique key for each list item.
+
+## Higher-Order Component
+
+The project includes a `withLogger` Higher-Order Component.
+
+It wraps the `PostList` component and logs its lifecycle events:
+
+```text
+PostList mounted
+PostList unmounted
+```
+
+This demonstrates how a HOC can add reusable behavior to an existing component without changing the component's main functionality.
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/AgertuDA/f1_mini_blog.git
+```
+
+Navigate into the project:
+
+```bash
+cd f1_mini_blog/mini-blog
+```
+
+Install the dependencies:
+
+```bash
+npm install
+```
+
+## Running the Application
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+The application will be available at the local URL provided by Vite, usually:
+
+```text
+http://localhost:5173/
+```
+
+## Building the Application
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+## Testing
+
+The project does not currently include a dedicated testing framework or test suite.
+
+The application was tested manually by running the Vite development server and checking the rendered components and browser console logs.
+
+## Challenges
+
+One challenge was working with TypeScript generics while creating the `withLogger` Higher-Order Component. The generic props type initially caused a TypeScript error when the wrapped component was rendered.
+
+The issue was resolved by constraining the generic type to an object:
+
+```tsx
+function withLogger<P extends object>(
+```
+
+Another challenge was understanding how `React.memo` and the `key` prop serve different purposes. The `key` prop helps React identify items in a list, while `React.memo` can prevent unnecessary component re-renders when props have not changed.
+
+## External Libraries and Packages
+
+The project uses the following main packages:
+
+- React — for building the user interface
+- React DOM — for rendering the React application
+- TypeScript — for static type checking
+- Vite — for development and production build tooling
+
+## Authour
+Agertu Diriba
