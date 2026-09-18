@@ -57,7 +57,8 @@ mini-blog/
 
 ### Post
 
-`Post` is a reusable functional component that receives a typed post object through props and displays the post title, author, content, and date.
+`Post` is a reusable functional component that receives a typed post object through props
+and displays the post title, author, a truncated content preview (first 12 words), and date.
 
 ### withLogger
 
@@ -99,7 +100,10 @@ This includes styling for the header, main content area, blog cards, typography,
 
 Inline styles are used in the `Post` component for the post date.
 
-Conditional styling is applied so that the most recent post has a bold and underlined date.
+Conditional styling is applied based on the post's date: if a post was published within
+the last 24 hours (relative to a fixed reference date, since dates are hardcoded sample
+data), its date is displayed in bold and underlined, and a "New!" badge is shown in the
+top-right corner of the post card.
 
 ## Optimization
 

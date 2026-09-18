@@ -13,7 +13,7 @@ function getPreview(content: string, wordLimit = 12): string {
 
 function isWithin24Hours(dateString: string): boolean {
   const postDate = new Date(dateString);
-  const now = new Date("September 18, 2026"); // fixed "today" since dates are hardcoded
+  const now = new Date("September 18, 2026"); 
   const diffMs = now.getTime() - postDate.getTime();
   const diffHours = diffMs / (1000 * 60 * 60);
   return diffHours >= 0 && diffHours <= 24;
